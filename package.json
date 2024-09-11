@@ -1,0 +1,29 @@
+{
+  "name": "wh_pokemon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "deploy": "./deploy.sh",
+  "dev": "cross-env NODE_ENV=development nodemon --exec npx functions-framework --target=wh_pokemon --watch src/",
+  "start": "./development.sh",
+  "ngrok": "ngrok start --config ngrok.yml --all"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/functions-framework": "^2.0.0",
+    "cors": "^2.8.5",
+    "dialogflow-nodejs-package": "github:1millionbot/dialogflow-nodejs-package",
+    "dotenv": "^16.4.5",
+    "express": "^4.20.0",
+    "google-auth-library": "^7.10.2",
+    "got": "^11.6.2",
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,12 @@
+authtoken: 2M8cIH25BtrDcGkJqV9JuisELwy_dvspFmQ14w3LeSaSb5DW
+version: 1
+
+tunnels:
+  webhook:
+    addr: 8080
+    bind_tls: true
+    proto: http
+  api:
+    addr: 3789
+    bind_tls: true
+    proto: http
