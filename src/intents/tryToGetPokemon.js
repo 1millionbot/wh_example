@@ -11,7 +11,7 @@ module.exports = async (webhookAdapter) => {
   try {
     const { parameters } = webhookAdapter;
 
-    const { number } = parameters || {};
+    const { number, name } = parameters || {};
 
     if (number) {
       const pokemon = await pokeApi.get(`pokemon/${number}`);
@@ -22,6 +22,21 @@ module.exports = async (webhookAdapter) => {
         {
           type: "Text",
           message: `El Pokémon numero ${number} es... ${pokemonName} !`,
+        },
+      ]);
+    }
+
+    if (name) {
+      const pokemonName = name.toLowerCase();
+
+      const pokemon = await pokeApi.get(`pokemon/${pokemonName}`);
+
+      const pokemonNumber = pokemon.id;
+
+      webhookAdapter.addMessage([
+        {
+          type: "Text",
+          message: `El Pokémon numero de ${name} es... ${pokemonNumber} !`,
         },
       ]);
     }
